@@ -3,11 +3,16 @@ CATEGORY_2 = "Rails"
 CATEGORY_3 = "HTML"
 
 class Category
-    attr_accessor :option, :name
+    attr_accessor :name
     
-    def initialize(option:)
-        @option = option
-        @name = name
+    def initialize()
+        @name = self.category()
+    end
+
+    def category()
+        puts "#1 - #{CATEGORY_1}\n#2 - #{CATEGORY_2}\n#3 - #{CATEGORY_3}"
+        puts "Escolha uma categoria para o seu item de estudo:"
+        option = gets.to_i()
 
         case option
         when 1
@@ -17,7 +22,8 @@ class Category
         when 3
             self.name = CATEGORY_3
         else
-            puts "Opção inválida! Escolha uma opção do menu."
+            puts "Opção inválida!."
+            category();
         end
     end
 end
