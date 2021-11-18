@@ -1,3 +1,4 @@
+require_relative 'study_item'
 require 'json'
 
 REGISTER_ITEM = 1
@@ -16,7 +17,14 @@ def menu()
 end
 
 def register_item()
-
+  puts "Digite o título do seu item de estudo:"
+  title = gets.chomp()
+  puts "#1 - Ruby\n#2 - Rails\n#3 - HTML"
+  puts "Escolha uma categoria para o seu item de estudo:"
+  option = gets.to_i()
+  study_item = StudyItem.new(title: title, option: option)
+  puts "Item #{study_item.title} da categoria #{study_item.category} cadastrado com sucesso!"
+  study_item
 end
 
 def find_by_word()
@@ -31,9 +39,11 @@ loop do
 
   case option
   when REGISTER_ITEM
-
+    items << register_item()
   when FIND_ALL_ITEMS
-
+    items.each do |item|
+      puts "#{item.title} - #{item.category}"
+    end
   when FIND_WORD
   
   when EXIT
