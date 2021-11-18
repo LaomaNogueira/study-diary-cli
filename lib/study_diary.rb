@@ -2,9 +2,9 @@ require_relative 'study_item'
 require 'json'
 
 REGISTER_ITEM = 1
-FIND_ALL_ITEMS = 2  #Foi encontrado #{X} itens
-FIND_WORD = 3       #Digite uma palavra para procurar:
-EXIT = 4            #Obrigada por usar o diário de estudos!
+FIND_ALL_ITEMS = 2
+FIND_WORD = 3
+EXIT = 4
 
 
 def menu()
