@@ -11,7 +11,7 @@ class Category
 
     def category()
         puts "#1 - #{CATEGORY_1}\n#2 - #{CATEGORY_2}\n#3 - #{CATEGORY_3}"
-        puts "Escolha uma categoria para o seu item de estudo:"
+        print "Escolha uma categoria para o seu item de estudo: "
         option = gets.to_i()
 
         case option
